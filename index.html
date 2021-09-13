@@ -1,0 +1,46 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+	<!-- Informació Meta -->
+	<meta charset="utf-8"/>
+	<meta name="description" content="A personal MTG Counter">
+	<meta name="keywords" content="MTG, Magic, Magic the gathering, counter">
+	<meta name="author" content="Roger Nebot">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="css/style.css" type="text/css"/>
+
+	<!--JQUERY-->
+	<script  type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+	<!-- Javascript -->
+	<script  type="text/javascript" src="js/javascript.js"></script>
+
+	<!-- favicon -->
+	<link href="img/favicon.png" rel="icon" type="image/png" />
+
+	<!-- Títol de la pàgina -->
+	<title>MTG Counter</title>
+</head>
+<body id="body" class="blue">
+	<header></header>
+	<section>
+		<article>
+			<div id="color">
+				<span onclick="color_change('white')">White</span>
+				<span onclick="color_change('blue')">Blue</span>
+				<span onclick="color_change('black')">Black</span>
+				<span onclick="color_change('red')">Red</span>
+				<span onclick="color_change('green')">Green</span>
+			</div>
+			<div id="life">20</div>
+			<div>
+				<span onclick="life_change('+')">UP</span>
+				<span onclick="life_reset('reset')">|</span>
+				<span onclick="life_change('-')">DOWN</span>
+			</div>
+		</article>
+	</section>
+	<footer></footer>
+</body>
+</html>
