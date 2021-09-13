@@ -1,11 +1,55 @@
-.white {background: white;color: black;}
-.blue {background: blue;color: white;}
-.black {background: black;color: white;}
-.red {background: red;color: white;}
-.green {background: green;color: white;}
+body {
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+
+  /*Can't select text*/
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/*Color selector*/
+#color {
+  text-align: center;
+}
+
+#color img{
+  width: 40px;
+  margin: 2px;
+  border-radius: 100px;
+  opacity: .7;
+  border: 5px solid rgba(0, 0, 0, 0);
+}
+.color_selected {
+  border: 8px solid white !important;
+  opacity: 1;
+}
+.color_selected_white {
+  border: 8px solid black !important;
+}
 
 
+/*BACKGROUND COLORS*/
+.white {background: #ffffdd; color: black;}
+.blue  {background: #378bc6;  color: #ffffdd;}
+.black {background: black; color: #ffffdd;}
+.red   {background: #af1d1d;   color: #ffffdd;}
+.green {background: #5bd387; color: #ffffdd;}
+
+#counter {
+  margin-top: 20px;
+}
 
 #life {
+  font-size: 12em;
+  line-height: .7em;
+  margin: 50px 0;
+}
 
+.button {
+  font-size: 10em;
+  line-height: 120px;
 }

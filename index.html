@@ -6,12 +6,19 @@
 	<meta name="description" content="A personal MTG Counter">
 	<meta name="keywords" content="MTG, Magic, Magic the gathering, counter">
 	<meta name="author" content="Roger Nebot">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+	<!-- GFONTS -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
 
 	<!-- CSS -->
 	<link rel="stylesheet" href="css/style.css" type="text/css"/>
 
-	<!--JQUERY-->
-	<script  type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<!--JQUERY
+	<script  type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
+	<script  type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
 
 	<!-- Javascript -->
 	<script  type="text/javascript" src="js/javascript.js"></script>
@@ -19,25 +26,29 @@
 	<!-- favicon -->
 	<link href="img/favicon.png" rel="icon" type="image/png" />
 
-	<!-- Títol de la pàgina -->
 	<title>MTG Counter</title>
 </head>
 <body id="body" class="blue">
 	<header></header>
 	<section>
 		<article>
+			<!-- Color selector -->
 			<div id="color">
-				<span onclick="color_change('white')">White</span>
-				<span onclick="color_change('blue')">Blue</span>
-				<span onclick="color_change('black')">Black</span>
-				<span onclick="color_change('red')">Red</span>
-				<span onclick="color_change('green')">Green</span>
+				<img id="white" src="img/white.png" onclick="color_change('white')">
+				<img id="blue" src="img/blue.png" onclick="color_change('blue')" class="color_selected">
+				<img id="black" src="img/black.png" onclick="color_change('black')">
+				<img id="red" src="img/red.png" onclick="color_change('red')">
+				<img id="green" src="img/green.png" onclick="color_change('green')">
 			</div>
-			<div id="life">20</div>
-			<div>
-				<span onclick="life_change('+')">UP</span>
-				<span onclick="life_reset('reset')">|</span>
-				<span onclick="life_change('-')">DOWN</span>
+
+			<div id="counter">
+				<!--plus button -->
+				<div id="max" class="button" onclick="life_change('+')">+</div>
+				<!-- LIFE -->
+				<div id="life" onclick="life_reset()">20</div>
+				<!-- minus button -->
+				<div id="min" class="button" onclick="life_change('-')">-</div>
+			</div>
 			</div>
 		</article>
 	</section>

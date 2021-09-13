@@ -1,9 +1,24 @@
 //Background color changer
 function color_change(color) {
-  $('#body').removeClass().addClass(color);
+  $('#body').removeClass().addClass(color); //backgroung color change
+
+  //remove class from all buttons
+  $('#white').removeClass();
+  $('#blue').removeClass();
+  $('#black').removeClass();
+  $('#red').removeClass();
+  $('#green').removeClass();
+
+  //add class selected to selected color
+  if (color == "white") {
+    $('#'+color).removeClass().addClass("color_selected_white");
+  }else{
+    $('#'+color).removeClass().addClass("color_selected");
+  }
+
 }
 
-//add or reove life form counter
+//add or remove life form counter
 function life_change(m){
   var num = $("#life").text();
   if (m == "+"){num++;}
@@ -13,5 +28,8 @@ function life_change(m){
 
 
 function life_reset(){
-  $("#life").text("20");
+  var a = confirm("Are you really sure you want to reset the life counter?");
+  if (a == true) {
+    $("#life").text("20");
+  }
 }
