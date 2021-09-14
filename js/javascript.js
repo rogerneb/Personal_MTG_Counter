@@ -12,8 +12,22 @@ function color_change(color) {
   //add class selected to selected color
   if (color == "white") {
     $('#'+color).removeClass().addClass("color_selected_white");
+    //change dices (in white background wee need black dices)
+    $('#dice4').attr("src","img/dice/4_black.png");
+    $('#dice6').attr("src","img/dice/6_black.png");
+    $('#dice8').attr("src","img/dice/8_black.png");
+    $('#dice10').attr("src","img/dice/10_black.png");
+    $('#dice12').attr("src","img/dice/12_black.png");
+    $('#dice20').attr("src","img/dice/20_black.png");
   }else{
     $('#'+color).removeClass().addClass("color_selected");
+    //change dices (in none white background wee need white dices)
+    $('#dice4').attr("src","img/dice/4.png");
+    $('#dice6').attr("src","img/dice/6.png");
+    $('#dice8').attr("src","img/dice/8.png");
+    $('#dice10').attr("src","img/dice/10.png");
+    $('#dice12').attr("src","img/dice/12.png");
+    $('#dice20').attr("src","img/dice/20.png");
   }
 
 }
