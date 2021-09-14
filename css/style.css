@@ -61,16 +61,19 @@ body {
 #dices4_8, #dices10_20 {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
   margin: 20px 0;
+  height: 150px;
 }
-#dices4_8 div, #dices10_20 div {
+#dices4_8 p, #dices10_20 p {
+  margin: 0;
+}
+#dices4_8 div, #dices10_20 div, #dices4_8 div span, #dices10_20 div span {
   width:90px;
-  margin: 10px;
 }
-#dices4_8 div img, #dices10_20 div img {
+#dices4_8 div img, #dices10_20 div img  {
   width: 100%;
 }
-#dices4_8, #dices10_20 {
-  line-height: 0;
+#dices4_8 span, #dices10_20 span {
+  font-size: 48pt;
 }
