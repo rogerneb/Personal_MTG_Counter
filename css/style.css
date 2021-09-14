@@ -15,7 +15,6 @@ body {
 #color {
   text-align: center;
 }
-
 #color img{
   width: 35px;
   margin: 2px;
@@ -26,11 +25,19 @@ body {
 .color_selected {
   border: 3px solid white !important;
   opacity: 1 !important;
-  transition: all 0.5s;
+
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 .color_selected_white {
   border: 3px solid black !important;
-  transition: all 0.5s;
+
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 
@@ -41,6 +48,7 @@ body {
 .red   {background: #af1d1d;   color: #ffffdd;transition: all 0.5s;}
 .green {background: #5bd387; color: #ffffdd;transition: all 0.5s;}
 
+/*General Styles*/
 #counter {
   margin-top: 20px;
 }
