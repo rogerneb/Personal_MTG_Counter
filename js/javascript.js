@@ -26,10 +26,14 @@ function life_change(m){
   $("#life").text(num);
 }
 
-
 function life_reset(){
   var a = confirm("Are you really sure you want to reset the life counter?");
   if (a == true) {
     $("#life").text("20");
   }
+}
+
+function roll_dice(n){
+  var dice_number = Math.floor(Math.random() * n)+1;
+  alert(n+"D: "+dice_number);
 }
