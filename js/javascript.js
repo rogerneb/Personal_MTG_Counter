@@ -29,7 +29,6 @@ function color_change(color) {
     $('#dice12').attr("src","img/dice/12.png");
     $('#dice20').attr("src","img/dice/20.png");
   }
-
 }
 
 //add or remove life form counter
@@ -52,7 +51,12 @@ function counter_reset() {
 
 //function roll dice
 function roll_dice(n) {
-  var dice_number = Math.floor(Math.random() * n)+1; //create random number between 1 and dice max (n)
+  if (n==10) { //D10 0-9
+    m=0;
+  }else{
+    m=1;
+  }
+  var dice_number = Math.floor(Math.random() * n)+m; //create random number between 1 and dice max (n)
   $('#d'+n).html("<span onclick=restore_dice("+n+")>"+dice_number+"</span>"); //put the result number
 
 }
