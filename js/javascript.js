@@ -33,20 +33,24 @@ function color_change(color) {
 }
 
 //add or remove life form counter
-function life_change(m) {
-  var num = $("#life").text();
-  if (m == "+"){num++;}
+function counter_change(n, type) {
+  var num = $("#"+type).text();
+  if (n == "+"){num++;}
   else{num--;}
-  $("#life").text(num);
+  $("#"+type).text(num);
 }
 
-function life_reset() {
-  var a = confirm("Are you really sure you want to reset the life counter?");
+function counter_reset() {
+  var a = confirm("Are you really sure you want to reset all counters?");
   if (a == true) {
     $("#life").text("20");
+    $("#poison").text("0");
+    $("#energy").text("0");
+    $("#other").text("0");
   }
 }
 
+//function roll dice
 function roll_dice(n) {
   var dice_number = Math.floor(Math.random() * n)+1; //create random number between 1 and dice max (n)
   $('#d'+n).html("<span onclick=restore_dice("+n+")>"+dice_number+"</span>"); //put the result number

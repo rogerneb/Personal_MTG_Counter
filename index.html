@@ -43,15 +43,45 @@
 		<!--life counter-->
 		<article id="counter">
 			<!--plus button -->
-			<div id="max" class="button" onclick="life_change('+')">+</div>
+			<div id="max" class="button" onclick="counter_change('+', 'life')">+</div>
 			<!-- LIFE -->
-			<div id="life" onclick="life_reset()">20</div>
+			<div id="life" onclick="counter_reset()">20</div>
 			<!-- minus button -->
-			<div id="min" class="button" onclick="life_change('-')">-</div>
+			<div id="min" class="button" onclick="counter_change('-', 'life')">-</div>
 		</article>
+		<hr>
+
+		<!--Other counters-->
+		<article id="oc">
+			<div class="oc_container">
+				<div class="oc_num">
+					<div onclick="counter_change('+','poison')">+</div>
+					<div id="poison">0</div>
+					<div  onclick="counter_change('-','poison')">-</div>
+				</div>
+				<div class="oc_text">Poison</div>
+			</div>
+			<div class="oc_container">
+				<div class="oc_num">
+					<div onclick="counter_change('+','energy')">+</div>
+					<div id="energy">0</div>
+					<div  onclick="counter_change('-','energy')">-</div>
+				</div>
+				<div class="oc_text">Energy</div>
+			</div>
+			<div class="oc_container">
+				<div class="oc_num">
+					<div onclick="counter_change('+','other')">+</div>
+					<div id="other">0</div>
+					<div  onclick="counter_change('-','other')">-</div>
+				</div>
+				<div class="oc_text">Other</div>
+			</div>
+		</article>
+		<hr>
 
 		<!--DICES-->
-		<article>
+		<article id="dices">
 		<div id="dices4_8">
 			<div>
 				<p>4D</p>

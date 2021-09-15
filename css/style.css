@@ -48,24 +48,41 @@ body {
 .red   {background: #af1d1d;   color: #ffffdd;transition: all 0.5s;}
 .green {background: #5bd387; color: #ffffdd;transition: all 0.5s;}
 
-/*General Styles*/
+/*Life Counter*/
 #counter {
   margin-top: 20px;
 }
-
 #life {
   font-size: 12em;
   line-height: .7em;
   margin: 50px 0;
 }
-
 .button {
   font-size: 10em;
   line-height: 120px;
 }
 
 
+/*Other Counters*/
+#oc {
+  display: flex;
+  justify-content: space-around;
+  margin: 0px 0 35px 0;
+  font-size: 50pt;
+}
+
+.oc_text {
+  font-size: 17pt;
+}
+
+
+
+
+
 /*DICES*/
+#dices {
+  margin-top: 50px;
+}
 #dices4_8, #dices10_20 {
   display: flex;
   flex-wrap: wrap;
