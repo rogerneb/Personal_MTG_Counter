@@ -1,6 +1,7 @@
 body {
   text-align: center;
   font-family: 'Oswald', sans-serif;
+  font-weight: 700;
 
   /*Can't select text*/
   -webkit-touch-callout: none;
@@ -13,17 +14,17 @@ body {
 
 /*Color selector*/
 #color {
-  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
 }
 #color img{
   width: 35px;
-  margin: 2px;
   border-radius: 100px;
   opacity: .7;
-  border: 3px solid rgba(0, 0, 0, 0);
+  border: 5px solid rgba(0, 0, 0, 0);
 }
 .color_selected {
-  border: 3px solid white !important;
+  border: 5px solid white !important;
   opacity: 1 !important;
 
   -webkit-transition: all 0.5s ease;
@@ -50,7 +51,7 @@ body {
 
 /*Life Counter*/
 #counter {
-  margin-top: 20px;
+  margin: 40px 0px;
 }
 #life {
   font-size: 12em;
@@ -62,22 +63,20 @@ body {
   line-height: 120px;
 }
 
-
 /*Other Counters*/
 #oc {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   margin: 0px 0 35px 0;
   font-size: 50pt;
 }
-
 .oc_text {
   font-size: 17pt;
+  font-weight: 200;
 }
-
-
-
-
+.oc_num {
+  line-height: 60px;
+}
 
 /*DICES*/
 #dices {
@@ -92,6 +91,8 @@ body {
 }
 #dices4_8 p, #dices10_20 p {
   margin: 0;
+  font-size: 17pt;
+  font-weight: 200;
 }
 #dices4_8 div, #dices10_20 div, #dices4_8 div span, #dices10_20 div span {
   width:90px;
