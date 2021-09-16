@@ -20,6 +20,9 @@
 	<script  type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
 	<script  type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
 
+	<!-- No Sleep -->
+	<script  type="text/javascript" src="js/NoSleep.js"></script>
+
 	<!-- Javascript -->
 	<script  type="text/javascript" src="js/javascript.js"></script>
 
@@ -45,7 +48,7 @@
 			<!--plus button -->
 			<div id="max" class="button" onclick="counter_change('+', 'life')">+</div>
 			<!-- LIFE -->
-			<div id="life" onclick="counter_reset()">20</div>
+			<div id="life">20</div>
 			<!-- minus button -->
 			<div id="min" class="button" onclick="counter_change('-', 'life')">-</div>
 		</article>
@@ -111,7 +114,11 @@
 			</div>
 		</div>
 	</article>
-		<!--END DICES-->
+	<hr>
+
+
+	<button onclick="counter_reset()" class="resetbtn">Reset all counters</button>
+
 
 	</section>
 	<footer></footer>

@@ -103,3 +103,12 @@ body {
 #dices4_8 span, #dices10_20 span {
   font-size: 48pt;
 }
+
+/*RESET BUTTON*/
+.resetbtn {
+	background-color:#a73f2d;
+	color:#ffffff;
+	font-size:17pt;
+	padding:9px 23px;
+	text-decoration:none;
+}
