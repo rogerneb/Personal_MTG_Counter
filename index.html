@@ -116,9 +116,16 @@
 	</article>
 	<hr>
 
+	<article>
+		<button onclick="counter_reset()" class="resetbtn">Reset all counters</button>
+		<button onclick="lock_screen()">Lock</button>
 
-	<button onclick="counter_reset()" class="resetbtn">Reset all counters</button>
-
+		<!--Fake Video for locking screen-->
+		<video id="video" width="0" height="0" loop>
+			<source src="vid/test.mp4" type="video/mp4">
+			Your browser does not support Screen Lock.
+		</video>
+	</article>
 
 	</section>
 	<footer></footer>
