@@ -52,7 +52,6 @@
 			<!-- minus button -->
 			<div id="min" class="button" onclick="counter_change('-', 'life')">-</div>
 		</article>
-		<hr>
 
 		<!--Other counters-->
 		<article id="oc">
@@ -81,7 +80,6 @@
 				<div class="oc_text">Other</div>
 			</div>
 		</article>
-		<hr>
 
 		<!--DICES-->
 		<article id="dices">
@@ -114,11 +112,11 @@
 			</div>
 		</div>
 	</article>
-	<hr>
 
 	<article>
 		<button onclick="counter_reset()" class="resetbtn">Reset all counters</button>
-		<button onclick="lock_screen()">Lock</button>
+		
+		<img id="switch" src="img/switches/off.png" onclick="lock_screen()">
 
 		<!--Fake Video for locking screen-->
 		<video id="video" width="0" height="0" loop>

@@ -80,9 +80,9 @@ function lock_screen(){
   video = document.getElementById("video");
   if (video.paused) {
     video.play();
-    alert("Screen now is locked");
+    alert("The screen will not turn off");
   }else{
     video.pause();
-    alert("Screen now is unlocked");
+    alert("The screen will turn off");
   }
 }
