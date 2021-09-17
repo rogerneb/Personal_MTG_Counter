@@ -20,9 +20,6 @@
 	<script  type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
 	<script  type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
 
-	<!-- No Sleep -->
-	<script  type="text/javascript" src="js/NoSleep.js"></script>
-
 	<!-- Javascript -->
 	<script  type="text/javascript" src="js/javascript.js"></script>
 
@@ -52,6 +49,7 @@
 			<!-- minus button -->
 			<div id="min" class="button" onclick="counter_change('-', 'life')">-</div>
 		</article>
+		<hr>
 
 		<!--Other counters-->
 		<article id="oc">
@@ -80,6 +78,7 @@
 				<div class="oc_text">Other</div>
 			</div>
 		</article>
+		<hr>
 
 		<!--DICES-->
 		<article id="dices">
@@ -112,11 +111,16 @@
 			</div>
 		</div>
 	</article>
+	<hr>
 
-	<article>
+	<article id="reset_and_switch">
+		<p>Keep screen on</p>
+		<label class="switch">
+  		<input type="checkbox" onclick="lock_screen()">
+  		<span class="slider round"></span>
+		</label><br><br>
+
 		<button onclick="counter_reset()" class="resetbtn">Reset all counters</button>
-		
-		<img id="switch" src="img/switches/off.png" onclick="lock_screen()">
 
 		<!--Fake Video for locking screen-->
 		<video id="video" width="0" height="0" loop>
@@ -124,8 +128,12 @@
 			Your browser does not support Screen Lock.
 		</video>
 	</article>
+</section>
 
-	</section>
-	<footer></footer>
+
+<footer>
+	<p>Personal MTG Counter 1.0, GNU GPL | Roger Nebot | 2021</p>
+	<a href="https://github.com/rogerneb/Personal_MTG_Counter" target="blank_"><img src="img/github_logo.png" alt="get it on github"></a>
+</footer>
 </body>
 </html>

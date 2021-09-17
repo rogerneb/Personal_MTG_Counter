@@ -12,6 +12,13 @@ body {
   user-select: none;
 }
 
+hr {
+  border: 0;
+  height: 1px;
+  background: rgba(193, 180, 180, 0.5);
+}
+
+
 /*Color selector*/
 #color {
   display: flex;
@@ -40,14 +47,15 @@ body {
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
-
+/*END Color selector*/
 
 /*BACKGROUND COLORS*/
-.white {background: #ffffdd; color: black; transition: all 0.5s;}
+.white {background: #ffffdd; color: #4f4f4f; transition: all 0.5s;}
 .blue  {background: #378bc6;  color: #ffffdd; transition: all 0.5s;}
-.black {background: black; color: #ffffdd; transition: all 0.5s;}
+.black {background: #4f4f4f; color: #ffffdd; transition: all 0.5s;}
 .red   {background: #af1d1d;   color: #ffffdd;transition: all 0.5s;}
 .green {background: #5bd387; color: #ffffdd;transition: all 0.5s;}
+/*END BACKGROUND COLORS*/
 
 /*Life Counter*/
 #counter {
@@ -62,6 +70,7 @@ body {
   font-size: 10em;
   line-height: 120px;
 }
+/*END Life Counter*/
 
 /*Other Counters*/
 #oc {
@@ -77,6 +86,7 @@ body {
 .oc_num {
   line-height: 60px;
 }
+/*END Other Counters*/
 
 /*DICES*/
 #dices {
@@ -103,6 +113,7 @@ body {
 #dices4_8 span, #dices10_20 span {
   font-size: 48pt;
 }
+/*END DICES*/
 
 /*RESET BUTTON*/
 .resetbtn {
@@ -111,4 +122,78 @@ body {
 	font-size:17pt;
 	padding:9px 23px;
 	text-decoration:none;
+}
+/*END RESET BUTTON*/
+
+
+/*SWITCH*/
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+input:checked + .slider {
+  background-color: #2196F3;
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+.slider.round:before {
+  border-radius: 50%;
+}
+/*END SWITCH*/
+
+
+#reset_and_switch {
+  font-weight: 200;
+  margin-bottom: 25px;
+}
+
+
+/*Footer Credits*/
+footer {
+  font-weight: 200;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+footer img {
+  width:50px;
 }

@@ -31,7 +31,7 @@ function color_change(color) {
   }
 }
 
-//add or remove life form counter
+//Add or remove life form counter
 function counter_change(n, type) {
   var num = $("#"+type).text();
   if (n == "+"){num++;}
@@ -39,6 +39,7 @@ function counter_change(n, type) {
   $("#"+type).text(num);
 }
 
+/*RESET COUNTERS*/
 function counter_reset() {
   var a = confirm("Are you really sure you want to reset all counters?");
   if (a == true) {
@@ -53,7 +54,7 @@ function counter_reset() {
   }
 }
 
-//function roll dice
+//ROLL DICES
 function roll_dice(n) {
   if (n==10) { //D10 0-9
     m=0;
@@ -65,6 +66,7 @@ function roll_dice(n) {
 
 }
 
+//RESTORE DICES
 function restore_dice(n) { //restore the image of dice
   $('#d'+n).html("<img id=dice"+n+" src=img/dice/"+n+".png alt="+n+"D onclick=roll_dice("+n+")>");
   if ($("#white").attr("class") == "color_selected_white") { //if selected color for interface is white, then put black dices
@@ -80,9 +82,9 @@ function lock_screen(){
   video = document.getElementById("video");
   if (video.paused) {
     video.play();
-    alert("The screen will not turn off");
+    //alert("The screen will not turn off");
   }else{
     video.pause();
-    alert("The screen will turn off");
+    //alert("The screen will turn off");
   }
 }
