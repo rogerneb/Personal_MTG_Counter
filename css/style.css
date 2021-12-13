@@ -20,14 +20,15 @@ hr {
 
 
 /*Color selector*/
-#color {
+.color {
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
 }
-#color img{
+.color img{
   width: 35px;
   border-radius: 100px;
-  opacity: .7;
+  opacity: 1;
   border: 5px solid rgba(0, 0, 0, 0);
 }
 .color_selected {
@@ -47,6 +48,8 @@ hr {
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
+
+.invisible {display: none;}
 /*END Color selector*/
 
 /*BACKGROUND COLORS*/
@@ -55,6 +58,17 @@ hr {
 .black {background: #4f4f4f; color: #ffffdd; transition: all 0.5s;}
 .red   {background: #af1d1d;   color: #ffffdd;transition: all 0.5s;}
 .green {background: #5bd387; color: #ffffdd;transition: all 0.5s;}
+
+/*more colors*/
+.pink {background: #bc198c; color: #ffffdd; transition: all 0.5s;}
+.yellow {background: #bcba19; color: #ffffdd; transition: all 0.5s;}
+.orange {background: #be611b; color: #ffffdd; transition: all 0.5s;}
+.gray {background: #969696; color: #ffffdd; transition: all 0.5s;}
+.cian {background: #34b6ad; color: #ffffdd; transition: all 0.5s;}
+.brown {background: #693c33; color: #ffffdd; transition: all 0.5s;}
+.darkgreen {background: #207244; color: #ffffdd; transition: all 0.5s;}
+.purple {background: #4b00a4; color: #ffffdd; transition: all 0.5s;}
+.sun {background: #e5ad00; color: #ffffdd; transition: all 0.5s;}
 /*END BACKGROUND COLORS*/
 
 /*Life Counter*/

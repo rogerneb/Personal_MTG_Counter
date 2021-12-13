@@ -3,16 +3,18 @@ function color_change(color) {
   $('#body').removeClass().addClass(color); //backgroung color change
 
   //remove class from all buttons
-  $('#white').removeClass();
-  $('#blue').removeClass();
-  $('#black').removeClass();
-  $('#red').removeClass();
-  $('#green').removeClass();
+  colors_list =["white", "blue", "black", "red", "green", "pink",
+  "yellow", "orange", "gray", "cian", "brown", "darkgreen", "purple", "sun"];
+
+  for (n=0; n<colors_list.length; n++) {
+    $('#'+colors_list[n]).removeClass();
+  }
+
 
   //add class selected to selected color
   if (color == "white") {
     $('#'+color).removeClass().addClass("color_selected_white");
-    //change dices (in white background wee need black dices)
+    //some colors needs black dices
     $('#dice4').attr("src","img/dice/4_black.png");
     $('#dice6').attr("src","img/dice/6_black.png");
     $('#dice8').attr("src","img/dice/8_black.png");
@@ -21,7 +23,7 @@ function color_change(color) {
     $('#dice20').attr("src","img/dice/20_black.png");
   }else{
     $('#'+color).removeClass().addClass("color_selected");
-    //change dices (in none white background wee need white dices)
+    //some colors needs white dices
     $('#dice4').attr("src","img/dice/4.png");
     $('#dice6').attr("src","img/dice/6.png");
     $('#dice8').attr("src","img/dice/8.png");
