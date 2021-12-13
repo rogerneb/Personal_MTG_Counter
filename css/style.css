@@ -20,13 +20,38 @@ hr {
 
 
 /*Color selector*/
+#color_container {
+  position: relative;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px 5px 0px;
+}
+
+.color_container_hide {
+  top: -115px;
+  margin: -8px -8px -130px -8px;
+
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.color_container_show {
+  top: 0px;
+  margin: -8px -8px 30px -8px;
+
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
 .color {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
 .color img{
-  width: 35px;
+  width: 40px;
   border-radius: 100px;
   opacity: 1;
   border: 5px solid rgba(0, 0, 0, 0);
@@ -35,10 +60,7 @@ hr {
   border: 5px solid white !important;
   opacity: 1 !important;
 
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+
 }
 .color_selected_white {
   border: 5px solid black !important;
@@ -48,8 +70,11 @@ hr {
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
+#arrow {
+  font-size: 27pt;
+  margin: 0;
+}
 
-.invisible {display: none;}
 /*END Color selector*/
 
 /*BACKGROUND COLORS*/

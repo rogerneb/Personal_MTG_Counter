@@ -1,9 +1,17 @@
+//select a random color when loading page
+$(document).ready(function() {
+  var colors_list =["white", "blue", "black", "red", "green", "pink",
+  "yellow", "orange", "gray", "cian", "brown", "darkgreen", "purple", "sun"];
+  var r = Math.floor(Math.random() * 13); //generate random number
+  color_change(colors_list[r]);
+});
+
 //Background color changer
 function color_change(color) {
   $('#body').removeClass().addClass(color); //backgroung color change
 
   //remove class from all buttons
-  colors_list =["white", "blue", "black", "red", "green", "pink",
+  var colors_list =["white", "blue", "black", "red", "green", "pink",
   "yellow", "orange", "gray", "cian", "brown", "darkgreen", "purple", "sun"];
 
   for (n=0; n<colors_list.length; n++) {
@@ -31,6 +39,19 @@ function color_change(color) {
     $('#dice12').attr("src","img/dice/12.png");
     $('#dice20').attr("src","img/dice/20.png");
   }
+}
+
+//show and hide color selector
+function hide_colors(){
+ $("#arrow").text("▲");
+ $("#arrow").attr("onclick", "show_colors()");
+ $('#color_container').removeClass().addClass("color_container_hide")
+}
+
+function show_colors(){
+ $("#arrow").text("▼");
+ $("#arrow").attr("onclick", "hide_colors()");
+ $('#color_container').removeClass().addClass("color_container_show")
 }
 
 //Add or remove life form counter
