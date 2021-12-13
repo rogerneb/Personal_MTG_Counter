@@ -43,13 +43,13 @@ function color_change(color) {
 
 //show and hide color selector
 function hide_colors(){
- $("#arrow").text("▲");
+ $("#arrow").text("▼");
  $("#arrow").attr("onclick", "show_colors()");
  $('#color_container').removeClass().addClass("color_container_hide")
 }
 
 function show_colors(){
- $("#arrow").text("▼");
+ $("#arrow").text("▲");
  $("#arrow").attr("onclick", "hide_colors()");
  $('#color_container').removeClass().addClass("color_container_show")
 }

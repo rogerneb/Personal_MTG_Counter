@@ -59,9 +59,8 @@ hr {
 .color_selected {
   border: 5px solid white !important;
   opacity: 1 !important;
-
-
 }
+
 .color_selected_white {
   border: 5px solid black !important;
 
@@ -73,6 +72,7 @@ hr {
 #arrow {
   font-size: 27pt;
   margin: 0;
+  color: white;
 }
 
 /*END Color selector*/
