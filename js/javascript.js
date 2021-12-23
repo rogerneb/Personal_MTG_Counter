@@ -64,17 +64,25 @@ function counter_change(n, type) {
 
 /*RESET COUNTERS*/
 function counter_reset() {
-  var a = confirm("Are you really sure you want to reset all counters?");
-  if (a == true) {
-    $("#life").text("20");
-    $("#poison").text("0");
-    $("#energy").text("0");
-    $("#other").text("0");
+  $('#reset_confirm').removeClass(); //show reset confirm
+}
 
-    //back to top
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-  }
+function reset_yes(){ //when reset...
+  $("#life").text("20");
+  $("#poison").text("0");
+  $("#energy").text("0");
+  $("#other").text("0");
+  //back to top
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  $('#reset_confirm').removeClass().addClass("invisible"); //hide reset message
+}
+
+function reset_no(){ //when canceled...
+  //back to top
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  $('#reset_confirm').removeClass().addClass("invisible");//hide reset message
 }
 
 //ROLL DICES

@@ -135,13 +135,23 @@
   		<span class="slider round"></span>
 		</label><br><br>
 
-		<button onclick="counter_reset()" class="resetbtn">Reset all counters</button>
+		<a onclick="counter_reset()" class="reset_all_counters_button">Reset all counters</a>
 
 		<!--Fake Video for locking screen-->
 		<video id="video" width="0" height="0" loop>
 			<source src="vid/test.mp4" type="video/mp4">
 			Your browser does not support Screen Lock.
 		</video>
+	</article>
+
+	<article id="reset_confirm" class="invisible">
+		<div id="reset_message">
+			<h2>WARNING!</h2>
+			<p>Reset game?<br>
+			Current game progress will be lost.</p>
+			<a class="reset_button reset_no" onclick="reset_no()">Cancel</a>
+			<a class="reset_button reset_yes" onclick="reset_yes()">Reset</a>
+		</div>
 	</article>
 </section>
 
