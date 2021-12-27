@@ -83,20 +83,20 @@ hr {
 /*BACKGROUND COLORS*/
 .white {background: #ffffdd; color: #4f4f4f; transition: all 0.5s;}
 .blue  {background: #378bc6;  color: #ffffdd; transition: all 0.5s;}
-.black {background: #4f4f4f; color: #ffffdd; transition: all 0.5s;}
+.grey {background: #4f4f4f; color: #ffffdd; transition: all 0.5s;}
 .red   {background: #af1d1d;   color: #ffffdd;transition: all 0.5s;}
 .green {background: #5bd387; color: #ffffdd;transition: all 0.5s;}
 
 /*more colors*/
 .pink {background: #bc198c; color: #ffffdd; transition: all 0.5s;}
-.yellow {background: #bcba19; color: #ffffdd; transition: all 0.5s;}
-.orange {background: #be611b; color: #ffffdd; transition: all 0.5s;}
+.yellow {background: #e5ad00; color: #ffffdd; transition: all 0.5s;}
+.darkred {background: #700000; color: #ffffdd; transition: all 0.5s;}
 .gray {background: #969696; color: #ffffdd; transition: all 0.5s;}
-.cian {background: #34b6ad; color: #ffffdd; transition: all 0.5s;}
-.brown {background: #693c33; color: #ffffdd; transition: all 0.5s;}
+.darkblue {background: #000370; color: #ffffdd; transition: all 0.5s;}
+.black {background: #000; color: #ffffdd; transition: all 0.5s;}
 .darkgreen {background: #207244; color: #ffffdd; transition: all 0.5s;}
 .purple {background: #4b00a4; color: #ffffdd; transition: all 0.5s;}
-.sun {background: #e5ad00; color: #ffffdd; transition: all 0.5s;}
+.orange {background: #be611b; color: #ffffdd; transition: all 0.5s;}
 /*END BACKGROUND COLORS*/
 
 /*Life Counter*/
@@ -224,7 +224,7 @@ input:checked + .slider:before {
   top: 0; bottom:0;left: 0;
   width: 100%;
   color: white;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.8);
 }
 
 #reset_message {

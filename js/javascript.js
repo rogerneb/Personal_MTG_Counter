@@ -1,7 +1,7 @@
 //select a random color when loading page
 $(document).ready(function() {
-  var colors_list =["white", "blue", "black", "red", "green", "pink",
-  "yellow", "orange", "gray", "cian", "brown", "darkgreen", "purple", "sun"];
+  var colors_list =["white", "blue", "grey", "red", "green", "pink",
+  "yellow", "darkred", "gray", "darkblue", "black", "darkgreen", "purple", "orange"];
   var r = Math.floor(Math.random() * 13); //generate random number
   color_change(colors_list[r]);
 });
@@ -11,8 +11,8 @@ function color_change(color) {
   $('#body').removeClass().addClass(color); //backgroung color change
 
   //remove class from all buttons
-  var colors_list =["white", "blue", "black", "red", "green", "pink",
-  "yellow", "orange", "gray", "cian", "brown", "darkgreen", "purple", "sun"];
+  var colors_list =["white", "blue", "grey", "red", "green", "pink",
+  "yellow", "darkred", "gray", "darkblue", "black", "darkgreen", "purple", "orange"];
 
   for (n=0; n<colors_list.length; n++) {
     $('#'+colors_list[n]).removeClass();
