@@ -56,10 +56,17 @@ function show_colors(){
 
 //Add or remove life form counter
 function counter_change(n, type) {
+  $("#"+type).text(num);
   var num = $("#"+type).text();
   if (n == "+"){num++;}
   else{num--;}
-  $("#"+type).text(num);
+  $("#"+type).fadeOut(250);
+
+  setTimeout(function () {
+    $("#"+type).text(num);
+  }, 250)
+
+  $("#"+type).fadeIn(250);
 }
 
 /*RESET COUNTERS*/
@@ -106,6 +113,8 @@ function restore_dice(n) { //restore the image of dice
     $('#d'+n).html("<img id=dice"+n+" src=img/dice/"+n+".png alt="+n+"D onclick=roll_dice("+n+")>");
   }
 }
+
+
 
 
 /*Lock mobile screen playing a fake video*/
