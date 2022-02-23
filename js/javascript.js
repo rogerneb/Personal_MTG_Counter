@@ -60,13 +60,12 @@ function counter_change(n, type) {
   var num = $("#"+type).text();
   if (n == "+"){num++;}
   else{num--;}
-  $("#"+type).fadeOut(250);
 
-  setTimeout(function () {
-    $("#"+type).text(num);
-  }, 250)
-
-  $("#"+type).fadeIn(250);
+  $("#"+type).fadeTo(50, 0.3);
+  //setTimeout(function () { //delayed code
+  $("#"+type).text(num); //change number
+  //}, 30)
+  $("#"+type).fadeTo(50, 1);
 }
 
 /*RESET COUNTERS*/
