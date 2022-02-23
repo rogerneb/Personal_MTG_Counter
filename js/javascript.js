@@ -61,11 +61,11 @@ function counter_change(n, type) {
   if (n == "+"){num++;}
   else{num--;}
 
-  $("#"+type).animate({ 'zoom': 0.8 }, 50);
+  $("#"+type).animate({ 'zoom': 0.8 }, 50); //zoom animation out
   //setTimeout(function () { //delayed code
   $("#"+type).text(num); //change number
   //}, 30)
-  $("#"+type).animate({ 'zoom': 1 }, 50);
+  $("#"+type).animate({ 'zoom': 1 }, 50); //zoom animation in
 }
 
 /*RESET COUNTERS*/
@@ -99,13 +99,13 @@ function roll_dice(n) {
     m=1;
   }
   var dice_number = Math.floor(Math.random() * n)+m; //create random number between 1 and dice max (n)
+  $("#d"+n).animate({ 'zoom': 0.4 }, 50); //Zoom animation out
   $('#d'+n).html("<span onclick=restore_dice("+n+")>"+dice_number+"</span>"); //put the result number
-
+  $("#d"+n).animate({ 'zoom': 1 }, 50); //zoom animation in
 }
 
 //RESTORE DICES
 function restore_dice(n) { //restore the image of dice
-  $('#d'+n).html("<img id=dice"+n+" src=img/dice/"+n+".png alt="+n+"D onclick=roll_dice("+n+")>");
   if ($("#white").attr("class") == "color_selected_white") { //if selected color for interface is white, then put black dices
     $('#d'+n).html("<img id=dice"+n+" src=img/dice/"+n+"_black.png alt="+n+"D onclick=roll_dice("+n+")>");
   }else{ //if not, put black
