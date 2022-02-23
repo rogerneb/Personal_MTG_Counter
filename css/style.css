@@ -102,7 +102,14 @@ hr {
 /*Life Counter*/
 #counter {
   margin: 40px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  text-align: center;
+  justify-content: space-between;
+  height: 475px;
 }
+
 #life {
   font-size: 12em;
   line-height: .7em;

@@ -61,11 +61,11 @@ function counter_change(n, type) {
   if (n == "+"){num++;}
   else{num--;}
 
-  $("#"+type).fadeTo(50, 0.3);
+  $("#"+type).animate({ 'zoom': 0.8 }, 50);
   //setTimeout(function () { //delayed code
   $("#"+type).text(num); //change number
   //}, 30)
-  $("#"+type).fadeTo(50, 1);
+  $("#"+type).animate({ 'zoom': 1 }, 50);
 }
 
 /*RESET COUNTERS*/
