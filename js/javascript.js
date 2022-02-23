@@ -1,3 +1,7 @@
+var fadetime = 450; //milliseconds fade in dices
+var zoomtime = 50; //miliseconds zoom in counters
+var zoomlvl = 0.3; //zoom level in counters. min 0(no zoom), max 1
+
 //select a random color when loading page
 $(document).ready(function() {
   var colors_list =["white", "blue", "grey", "red", "green", "pink",
@@ -61,11 +65,11 @@ function counter_change(n, type) {
   if (n == "+"){num++;}
   else{num--;}
 
-  $("#"+type).animate({ 'zoom': 0.8 }, 50); //zoom animation out
+  $("#"+type).animate({ 'zoom': 1-zoomlvl }, zoomtime); //zoom animation out
   //setTimeout(function () { //delayed code
   $("#"+type).text(num); //change number
   //}, 30)
-  $("#"+type).animate({ 'zoom': 1 }, 50); //zoom animation in
+  $("#"+type).animate({ 'zoom': 1 }, zoomtime); //zoom animation in
 }
 
 /*RESET COUNTERS*/
@@ -99,18 +103,24 @@ function roll_dice(n) {
     m=1;
   }
   var dice_number = Math.floor(Math.random() * n)+m; //create random number between 1 and dice max (n)
-  $("#d"+n).animate({ 'zoom': 0.4 }, 50); //Zoom animation out
-  $('#d'+n).html("<span onclick=restore_dice("+n+")>"+dice_number+"</span>"); //put the result number
-  $("#d"+n).animate({ 'zoom': 1 }, 50); //zoom animation in
+  $("#d"+n).fadeOut(fadetime) //Fade out
+  setTimeout(function () { //delayed code
+    $('#d'+n).html("<span onclick=restore_dice("+n+")>"+dice_number+"</span>"); //put the result number
+  }, fadetime)
+  $("#d"+n).fadeIn(fadetime) //Fade In
 }
 
 //RESTORE DICES
 function restore_dice(n) { //restore the image of dice
-  if ($("#white").attr("class") == "color_selected_white") { //if selected color for interface is white, then put black dices
-    $('#d'+n).html("<img id=dice"+n+" src=img/dice/"+n+"_black.png alt="+n+"D onclick=roll_dice("+n+")>");
-  }else{ //if not, put black
-    $('#d'+n).html("<img id=dice"+n+" src=img/dice/"+n+".png alt="+n+"D onclick=roll_dice("+n+")>");
-  }
+  $("#d"+n).fadeOut(fadetime) //Fade out
+  setTimeout(function () { //delayed code
+    if ($("#white").attr("class") == "color_selected_white") { //if selected color for interface is white, then put black dices
+      $('#d'+n).html("<img id=dice"+n+" src=img/dice/"+n+"_black.png alt="+n+"D onclick=roll_dice("+n+")>");
+    }else{ //if not, put black
+      $('#d'+n).html("<img id=dice"+n+" src=img/dice/"+n+".png alt="+n+"D onclick=roll_dice("+n+")>");
+    }
+  }, fadetime)
+  $("#d"+n).fadeIn(fadetime) //Fade In
 }
 
 
