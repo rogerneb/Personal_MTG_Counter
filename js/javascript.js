@@ -22,11 +22,10 @@ function color_change(color) {
     $('#'+colors_list[n]).removeClass();
   }
 
-
   //add class selected to selected color
   if (color == "white") {
     $('#'+color).removeClass().addClass("color_selected_white");
-    //some colors needs black dices
+    //white color needs black dices
     $('#dice4').attr("src","img/dice/4_black.png");
     $('#dice6').attr("src","img/dice/6_black.png");
     $('#dice8').attr("src","img/dice/8_black.png");
@@ -35,7 +34,7 @@ function color_change(color) {
     $('#dice20').attr("src","img/dice/20_black.png");
   }else{
     $('#'+color).removeClass().addClass("color_selected");
-    //some colors needs white dices
+    //other colors needs white dices
     $('#dice4').attr("src","img/dice/4.png");
     $('#dice6').attr("src","img/dice/6.png");
     $('#dice8').attr("src","img/dice/8.png");
@@ -78,10 +77,24 @@ function counter_reset() {
 }
 
 function reset_yes(){ //when reset...
+  //reset counters
   $("#life").text("20");
   $("#poison").text("0");
   $("#energy").text("0");
   $("#other").text("0");
+  dices = [4, 6, 8, 10, 12, 20]; //dices list
+
+  //reset dices
+  if ($("#white").attr("class") == "color_selected_white") {//white color needs black dices
+    for (n=0; n < dices.length; n++) {
+      $('#d'+dices[n]).html("<img id=dice"+dices[n]+" src=img/dice/"+dices[n]+"_black.png alt="+n+"D onclick=roll_dice("+dices[n]+")>");
+    }
+  }else{ //other colors need white dices
+    for (n=0; n < dices.length; n++) {
+      $('#d'+dices[n]).html("<img id=dice"+dices[n]+" src=img/dice/"+dices[n]+".png alt="+n+"D onclick=roll_dice("+dices[n]+")>");
+    }
+  }
+
   //back to top
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
@@ -116,7 +129,7 @@ function restore_dice(n) { //restore the image of dice
   setTimeout(function () { //delayed code
     if ($("#white").attr("class") == "color_selected_white") { //if selected color for interface is white, then put black dices
       $('#d'+n).html("<img id=dice"+n+" src=img/dice/"+n+"_black.png alt="+n+"D onclick=roll_dice("+n+")>");
-    }else{ //if not, put black
+    }else{ //if not, put white
       $('#d'+n).html("<img id=dice"+n+" src=img/dice/"+n+".png alt="+n+"D onclick=roll_dice("+n+")>");
     }
   }, fadetime)
