@@ -124,7 +124,7 @@ hr {
 /*Other Counters*/
 #oc {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   margin: 0px 0 35px 0;
   font-size: 50pt;
 }
@@ -134,6 +134,7 @@ hr {
 }
 .oc_num {
   line-height: 60px;
+  width: 100px;
 }
 /*END Other Counters*/
 
