@@ -277,5 +277,9 @@ footer {
 }
 
 footer img {
-  width:50px;
+  width: 45px;
+}
+
+footer .contact {
+  color: inherit;
 }
