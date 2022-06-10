@@ -2,11 +2,19 @@ var fadetime = 450; //milliseconds fade in dices
 var zoomtime = 50; //miliseconds zoom in counters
 var zoomlvl = 0.3; //zoom level in counters. min 0(no zoom), max 1
 
-//select a random color when loading page
+
 $(document).ready(function() {
+
+  var year = new Date().getFullYear();
+  $("#year").html(year);
+  
+  //select a random color when loading page
   var colors_list =["white", "blue", "grey", "red", "green", "pink",
-  "yellow", "darkred", "gray", "darkblue", "black", "darkgreen", "purple", "orange"];
-  var r = Math.floor(Math.random() * 13); //generate random number
+  "yellow", "darkred", "gray", "darkblue", "black", "darkgreen", "purple", "orange",
+  "gradient1", "gradient2", "gradient3", "gradient4", "gradient5", "gradient6", "gradient7"
+  ];
+  
+  var r = Math.floor(Math.random() * 20); //generate random number
   color_change(colors_list[r]);
 });
 
@@ -17,7 +25,7 @@ function color_change(color) {
   //remove class from all buttons
   var colors_list =["white", "blue", "grey", "red", "green", "pink",
   "yellow", "darkred", "gray", "darkblue", "black", "darkgreen", "purple", "orange",
-  "degree1", "degree2", "degree3", "degree4", "degree5", "degree6", "degree7"
+  "gradient1", "gradient2", "gradient3", "gradient4", "gradient5", "gradient6", "gradient7"
   ];
 
   for (n=0; n<colors_list.length; n++) {

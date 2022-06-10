@@ -96,16 +96,17 @@ hr {
 .black {background: #000; color: #ffffdd; transition: all 0.5s;}
 .darkgreen {background: #207244; color: #ffffdd; transition: all 0.5s;}
 .purple {background: #4b00a4; color: #ffffdd; transition: all 0.5s;}
-.orange {background: #be611b; color: #ffffdd; transition: all 0.5s;}
+.orange {background: #ff6600; color: #ffffdd; transition: all 0.5s;}
 
 /*gradient colors...*/
-.degree1 {background: linear-gradient(0deg, rgba(63,94,251,1) 0%, rgba(171,80,166,1) 40%, rgba(252,70,86,1) 89%); color: #ffffdd; transition: all 0.5s;}
-.degree2 {background: rgb(2,0,36); background: linear-gradient(0deg, rgb(216, 56, 56) 0%, rgb(40, 30, 226) 100%); color: #ffffdd; transition: all 0.5s;}
-.degree3 {background: rgb(2,0,36); background: linear-gradient(0deg, rgb(12, 125, 31) 0%, rgb(40, 30, 226) 100%); color: #ffffdd; transition: all 0.5s;}
-.degree4 {background: rgb(2,0,36); background: linear-gradient(0deg, rgb(5, 0, 102) 0%, rgb(18, 196, 231) 100%); color: #ffffdd; transition: all 0.5s;}
-.degree5 {background: rgb(2,0,36); background: linear-gradient(0deg, rgb(5, 0, 102) 0%, rgb(18, 196, 231) 100%); color: #ffffdd; transition: all 0.5s;}
-.degree6 {background: rgb(2,0,36); background: linear-gradient(0deg, rgb(5, 0, 102) 0%, rgb(18, 196, 231) 100%); color: #ffffdd; transition: all 0.5s;}
-.degree7 {background: rgb(2,0,36); background: linear-gradient(0deg, rgb(5, 0, 102) 0%, rgb(18, 196, 231) 100%); color: #ffffdd; transition: all 0.5s;}
+.gradient1 {background: linear-gradient(0deg, rgb(154, 7, 2) 0%, rgb(75, 3, 113) 80%, rgb(7, 4, 173) 89%); color: #ffffdd; transition: all 0.5s;}
+.gradient1 {background: linear-gradient(0deg, rgba(63,94,251,1) 0%, rgba(171,80,166,1) 40%, rgba(252,70,86,1) 89%); color: #ffffdd; transition: all 0.5s;}
+.gradient2 {background: linear-gradient(0deg, rgb(10, 10, 10) 0%, rgb(43, 52, 59) 40%, rgb(7, 48, 182) 89%); color: #ffffdd; transition: all 0.5s;}
+.gradient3 {background: linear-gradient(0deg, rgb(254, 65, 65) 0%, rgb(186, 5, 5) 40%, rgb(0, 0, 0) 89%); color: #ffffdd; transition: all 0.5s;}
+.gradient4 {background: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 40%, rgb(248, 4, 4) 89%); color: #ffffdd; transition: all 0.5s;}
+.gradient5 {background: linear-gradient(0deg, rgb(34, 118, 154) 0%, rgb(80, 171, 156) 40%, rgb(2, 90, 43) 89%); color: #ffffdd; transition: all 0.5s;}
+.gradient6 {background: linear-gradient(0deg, rgb(154, 7, 2) 0%, rgb(75, 3, 113) 80%, rgb(7, 4, 173) 89%); color: #ffffdd; transition: all 0.5s;}
+.gradient7 {background: linear-gradient(0deg, rgba(227,224,0,1) 33%, rgba(255,102,0,1) 65%); color: #ffffdd; transition: all 0.5s;}
 
 /*END BACKGROUND COLORS*/
 
