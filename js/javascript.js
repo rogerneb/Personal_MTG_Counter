@@ -16,7 +16,9 @@ function color_change(color) {
 
   //remove class from all buttons
   var colors_list =["white", "blue", "grey", "red", "green", "pink",
-  "yellow", "darkred", "gray", "darkblue", "black", "darkgreen", "purple", "orange"];
+  "yellow", "darkred", "gray", "darkblue", "black", "darkgreen", "purple", "orange",
+  "degree1", "degree2", "degree3", "degree4", "degree5", "degree6", "degree7"
+  ];
 
   for (n=0; n<colors_list.length; n++) {
     $('#'+colors_list[n]).removeClass();

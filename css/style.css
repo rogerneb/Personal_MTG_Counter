@@ -29,7 +29,7 @@ hr {
 }
 
 .color_container_hide {
-  top: -115px;
+  top: -164px;
   margin: -8px -8px -130px -8px;
 
   -webkit-transition: all 0.5s ease;
@@ -86,10 +86,10 @@ hr {
 .grey {background: #4f4f4f; color: #ffffdd; transition: all 0.5s;}
 .red   {background: #af1d1d;   color: #ffffdd;transition: all 0.5s;}
 .green {background: #5bd387; color: #ffffdd;transition: all 0.5s;}
-
-/*more colors*/
 .pink {background: #bc198c; color: #ffffdd; transition: all 0.5s;}
 .yellow {background: #e5ad00; color: #ffffdd; transition: all 0.5s;}
+
+/*more colors*/
 .darkred {background: #700000; color: #ffffdd; transition: all 0.5s;}
 .gray {background: #969696; color: #ffffdd; transition: all 0.5s;}
 .darkblue {background: #000370; color: #ffffdd; transition: all 0.5s;}
@@ -97,6 +97,16 @@ hr {
 .darkgreen {background: #207244; color: #ffffdd; transition: all 0.5s;}
 .purple {background: #4b00a4; color: #ffffdd; transition: all 0.5s;}
 .orange {background: #be611b; color: #ffffdd; transition: all 0.5s;}
+
+/*gradient colors...*/
+.degree1 {background: linear-gradient(0deg, rgba(63,94,251,1) 0%, rgba(171,80,166,1) 40%, rgba(252,70,86,1) 89%); color: #ffffdd; transition: all 0.5s;}
+.degree2 {background: rgb(2,0,36); background: linear-gradient(0deg, rgb(216, 56, 56) 0%, rgb(40, 30, 226) 100%); color: #ffffdd; transition: all 0.5s;}
+.degree3 {background: rgb(2,0,36); background: linear-gradient(0deg, rgb(12, 125, 31) 0%, rgb(40, 30, 226) 100%); color: #ffffdd; transition: all 0.5s;}
+.degree4 {background: rgb(2,0,36); background: linear-gradient(0deg, rgb(5, 0, 102) 0%, rgb(18, 196, 231) 100%); color: #ffffdd; transition: all 0.5s;}
+.degree5 {background: rgb(2,0,36); background: linear-gradient(0deg, rgb(5, 0, 102) 0%, rgb(18, 196, 231) 100%); color: #ffffdd; transition: all 0.5s;}
+.degree6 {background: rgb(2,0,36); background: linear-gradient(0deg, rgb(5, 0, 102) 0%, rgb(18, 196, 231) 100%); color: #ffffdd; transition: all 0.5s;}
+.degree7 {background: rgb(2,0,36); background: linear-gradient(0deg, rgb(5, 0, 102) 0%, rgb(18, 196, 231) 100%); color: #ffffdd; transition: all 0.5s;}
+
 /*END BACKGROUND COLORS*/
 
 /*Life Counter*/
