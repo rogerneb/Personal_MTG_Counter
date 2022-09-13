@@ -89,6 +89,8 @@ function counter_reset() {
 function reset_yes(){ //when reset...
   //reset counters
   $("#life").text("20");
+  $("#life_1p").text("20");
+  $("#life_2p").text("20");
   $("#poison").text("0");
   $("#energy").text("0");
   $("#other").text("0");
