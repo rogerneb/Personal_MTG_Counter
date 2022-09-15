@@ -64,16 +64,49 @@
 				<p id="arrow" onclick="hide_colors()">▲</p> <!-- ▼ &#9660;, ▲ &#9650;-->
 			</article>
 		</div>
+
 		<!--life counter-->
-		<article id="counter">
-			<!--plus button -->
-			<div id="max" class="button" onclick="counter_change('+', 'life')">+</div>
-			<!-- LIFE -->
-			<div id="life">20</div>
-			<!-- minus button -->
-			<div id="min" class="button" onclick="counter_change('-', 'life')">-</div>
-		</article>
+		<div id="oneplayers_container" class="">
+			<article id="counter">
+				<!--plus button -->
+				<div id="max" class="button" onclick="counter_change('+', 'life')">+</div>
+				<!-- LIFE -->
+				<div id="life">20</div>
+				<!-- minus button -->
+				<div id="min" class="button" onclick="counter_change('-', 'life')">-</div>
+			</article>
+			<hr>
+		</div>
+
+		<!--life 2P counter-->
+		<div id="twoplayers_container" class="invisible">
+			<article id="counter_2p">
+				<!-- LIFE 2P-->
+				<div id="space_2p"></div>
+				<div id="life_2p">20</div>
+				<div id="min_max_2p">
+					<!--plus button -->
+					<div id="max_2p" class="button_2p" onclick="counter_change('+', 'life_2p')">+</div>
+					<!-- minus button -->
+					<div id="min_2p" class="button_2p" onclick="counter_change('-', 'life_2p')">-</div>
+				</div>
+			</article>
+			<hr>
+
+			<!--life 1P counter-->
+			<article id="counter_1p">
+				<!-- LIFE 1P-->
+				<div id="space_1p"></div>
+				<div id="life_1p">20</div>
+				<div id="min_max_1p">
+					<!--plus button -->
+					<div id="max_1p" class="button_1p" onclick="counter_change('+', 'life_1p')">+</div>
+					<!-- minus button -->
+					<div id="min_1p" class="button_1p" onclick="counter_change('-', 'life_1p')">-</div>
+				</div>
+			</article>
 		<hr>
+		</div>
 
 		<!--Other counters-->
 		<article id="oc">
@@ -146,7 +179,7 @@
 
 		<div id="buttons">
 			<a onclick="counter_reset()" class="reset_all_counters_button">Reset all counters</a>
-			<a href="2players.html" class="twoplayers_mode_button">2P Mode</a>
+			<a onclick="change_player_mode('1p')" id="change_player_mode" class="twoplayers_mode_button">2P Mode</a>
 		</div>
 		
 		<!--Fake Video for locking screen-->
@@ -170,7 +203,7 @@
 
 
 <footer>
-	<p>Personal MTG Counter 3.0.1, GNU GPL | <a href="mailto:roger.neb@gmail.com" class="contact">Roger Nebot</a> | <span id="year">-</span></p>
+	<p>Personal MTG Counter 3.1.1, GNU GPL | <a href="mailto:roger.neb@gmail.com" class="contact">Roger Nebot</a> | <span id="year">-</span></p>
 	<p><a href="https://www.molokoserver.com/Personal_MTG_Counter/apk/personal_mtg_counter.apk" target="blank_"><img src="img/android.png" alt="Download Android apk"></a>
 	<a href="https://github.com/rogerneb/Personal_MTG_Counter" target="blank_"><img src="img/github_logo.png" alt="get it on github"></a></p>
 </footer>

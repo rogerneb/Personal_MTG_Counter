@@ -148,7 +148,23 @@ function restore_dice(n) { //restore the image of dice
   $("#d"+n).fadeIn(fadetime) //Fade In
 }
 
-
+//change mode
+function change_player_mode(actual_mode){
+  if(actual_mode == "1p") {
+    $('#oneplayers_container').addClass("invisible"); //hide one player mode
+    $('#twoplayers_container').removeClass(); //show to players mode
+    $('#change_player_mode').attr("onclick", "change_player_mode('2p')"); //change the actual mode in button
+    $('#change_player_mode').html("1P Mode");
+  }else if (actual_mode == "2p") {
+    $('#twoplayers_container').addClass("invisible"); //hide two players mode
+    $('#oneplayers_container').removeClass(); //show one player mode
+    $('#change_player_mode').attr("onclick", "change_player_mode('1p')"); //change the actual mode in button
+    $('#change_player_mode').html("2P Mode");
+  }
+  //go to top
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
 
 
 /*Lock mobile screen playing a fake video*/

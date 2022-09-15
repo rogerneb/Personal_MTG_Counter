@@ -325,8 +325,9 @@ input:checked + .slider:before {
   justify-content: center;
 }
 
-
-
+#space_1p, #space_2p {
+  width: 24px;
+}
 /*END 2P MODE*/
 
 /*Footer Credits*/
