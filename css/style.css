@@ -135,7 +135,7 @@ hr {
 /*Other Counters*/
 #oc {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin: 0px 0 35px 0;
   font-size: 50pt;
 }
@@ -301,7 +301,7 @@ input:checked + .slider:before {
 
 #life_1p, #life_2p {
   font-size: 125pt !important;
-  width: 40%;
+  width: 70%;
   height: 250px;
 }
 
