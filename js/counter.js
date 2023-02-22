@@ -4,7 +4,6 @@ var zoomlvl = 0.3; //zoom level in counters. min 0(no zoom), max 1
 
 
 $(document).ready(function() {
-
   var year = new Date().getFullYear();
   $("#year").html(year);
   
@@ -20,7 +19,7 @@ $(document).ready(function() {
 
 //Background color changer
 function color_change(color) {
-  $('#body').removeClass().addClass(color); //backgroung color change
+  $('#counter-app').removeClass().addClass(color); //backgroung color change
 
   //remove class from all buttons
   var colors_list =["white", "blue", "grey", "red", "green", "pink",
@@ -75,9 +74,7 @@ function counter_change(n, type) {
   else{num--;}
 
   $("#"+type).animate({ 'zoom': 1-zoomlvl }, zoomtime); //zoom animation out
-  //setTimeout(function () { //delayed code
   $("#"+type).text(num); //change number
-  //}, 30)
   $("#"+type).animate({ 'zoom': 1 }, zoomtime); //zoom animation in
 }
 
@@ -148,7 +145,7 @@ function restore_dice(n) { //restore the image of dice
   $("#d"+n).fadeIn(fadetime) //Fade In
 }
 
-//change mode
+//change mode 1p to 2p or 2p to 1p
 function change_player_mode(actual_mode){
   if(actual_mode == "1p") {
     $('#oneplayers_container').addClass("invisible"); //hide one player mode
@@ -166,15 +163,33 @@ function change_player_mode(actual_mode){
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
+//go to library
+function go_to_library(){
+  $('#counter-app').addClass("invisible"); //hide counter
+  $('#library-app').removeClass(); //show library
+  $("body").addClass("library-app-body"); //add specific class for body in library mode
+  //back to top
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
+//go to counter
+function go_to_counter(){
+  $('#library-app').addClass("invisible"); //hide library
+  $('#counter-app').removeClass("invisible"); //show counter
+  $("body").removeClass("library-app-body"); //remove specific library class for body in counter mode
+  //back to top
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
 
 /*Lock mobile screen playing a fake video*/
 function lock_screen(){
   video = document.getElementById("video");
   if (video.paused) {
-    video.play();
-    //alert("The screen will not turn off");
+    video.play(); //when video is played screen NOT turn off.
   }else{
-    video.pause();
-    //alert("The screen will turn off");
+    video.pause();//when video is not played screen turn off.
   }
 }

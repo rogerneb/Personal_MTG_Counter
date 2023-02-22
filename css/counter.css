@@ -1,7 +1,9 @@
+/*General body*/
 body {
   text-align: center;
   font-family: 'Oswald', sans-serif;
   font-weight: 700;
+  margin: 0;
 
   /*Can't select text*/
   -webkit-touch-callout: none;
@@ -12,6 +14,7 @@ body {
   user-select: none;
 }
 
+/*invisible hr*/
 hr {
   border: 0;
   height: 1px;
@@ -26,12 +29,10 @@ hr {
   position: relative;
   background: rgba(0, 0, 0, 0.5);
   padding: 5px 5px 0px;
-  border-radius: 0 0 20px 20px;
 }
-
 .color_container_hide {
-  top: -158px;
-  margin: -8px -8px -130px -8px;
+  top: -160px;
+  margin: 0px 0px -130px 0px;
 
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
@@ -40,14 +41,13 @@ hr {
 }
 .color_container_show {
   top: 0px;
-  margin: -8px -8px 30px -8px;
+  margin: 0px 0px 30px 0px;
 
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
-
 .color {
   display: flex;
   justify-content: space-evenly;
@@ -63,7 +63,6 @@ hr {
   border: 5px solid #f0ffff !important;
   opacity: 1 !important;
 }
-
 .color_selected_white {
   border: 5px solid black !important;
 
@@ -72,15 +71,12 @@ hr {
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
-
 #arrow {
   font-size: 18pt;
   margin: 0;
   color: #ffffdd;
 }
-
 /*END Color selector*/
-
 /*BACKGROUND COLORS*/
 .white {background: #ffffdd; color: #4f4f4f; transition: all 0.5s;}
 .blue  {background: #378bc6;  color: #ffffdd; transition: all 0.5s;}
@@ -89,7 +85,6 @@ hr {
 .green {background: #5bd387; color: #ffffdd;transition: all 0.5s;}
 .pink {background: #bc198c; color: #ffffdd; transition: all 0.5s;}
 .yellow {background: #e5ad00; color: #ffffdd; transition: all 0.5s;}
-
 /*more colors*/
 .darkred {background: #700000; color: #ffffdd; transition: all 0.5s;}
 .gray {background: #969696; color: #ffffdd; transition: all 0.5s;}
@@ -98,7 +93,6 @@ hr {
 .darkgreen {background: #207244; color: #ffffdd; transition: all 0.5s;}
 .purple {background: #4b00a4; color: #ffffdd; transition: all 0.5s;}
 .orange {background: #ff6600; color: #ffffdd; transition: all 0.5s;}
-
 /*gradient colors...*/
 .gradient1 {background: linear-gradient(0deg, rgb(154, 7, 2) 0%, rgb(75, 3, 113) 80%, rgb(7, 4, 173) 89%); color: #ffffdd; transition: all 0.5s;}
 .gradient1 {background: linear-gradient(0deg, rgba(63,94,251,1) 0%, rgba(171,80,166,1) 40%, rgba(252,70,86,1) 89%); color: #ffffdd; transition: all 0.5s;}
@@ -108,7 +102,6 @@ hr {
 .gradient5 {background: linear-gradient(0deg, rgb(34, 118, 154) 0%, rgb(80, 171, 156) 40%, rgb(2, 90, 43) 89%); color: #ffffdd; transition: all 0.5s;}
 .gradient6 {background: linear-gradient(0deg, rgb(154, 7, 2) 0%, rgb(75, 3, 113) 80%, rgb(7, 4, 173) 89%); color: #ffffdd; transition: all 0.5s;}
 .gradient7 {background: linear-gradient(0deg, rgba(227,224,0,1) 33%, rgba(255,102,0,1) 65%); color: #ffffdd; transition: all 0.5s;}
-
 /*END BACKGROUND COLORS*/
 
 /*Life Counter*/
@@ -121,7 +114,6 @@ hr {
   justify-content: space-between;
   height: 475px;
 }
-
 #life {
   font-size: 12em;
   line-height: .7em;
@@ -177,7 +169,7 @@ hr {
 }
 /*END DICES*/
 
-/*SWITCH*/
+/*SWITCH screen on*/
 .switch {
   position: relative;
   display: inline-block;
@@ -229,22 +221,19 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
-/*END SWITCH*/
+/*END SWITCH screen on*/
 
-
-/*RESET BUTTONS*/
+/*BUTTONS*/
 #buttons {
   display: flex;
   flex-direction: column;
   text-align: center;
   padding: 0 10%;
 }
-
 #reset_and_switch {
   font-weight: 200;
   margin-bottom: 25px;
 }
-
 #reset_confirm {
   font-size: 1.5em;
   position:fixed;
@@ -253,17 +242,14 @@ input:checked + .slider:before {
   color: #f0ffff;
   background: rgba(0, 0, 0, 0.8);
 }
-
 #reset_message  {
   margin: 150px 0;
   padding: 0 30px;
 }
-
 #reset_message p {
   font-weight: 100;
 }
-
-.reset_all_counters_button, .twoplayers_mode_button {
+.reset_all_counters_button, .twoplayers_mode_button, .library_button {
 	background-color:#a73f2d;
   border: 4px solid #f0ffff;
   border-radius: 4px;
@@ -273,16 +259,17 @@ input:checked + .slider:before {
 	text-decoration:none;
   margin-bottom: 10px;
 }
-
-.twoplayers_mode_button {
-  background-color:#2d60a7;
-}
-
 .reset_button {
   padding: 3px 15px;
   font-size: 1.2em;
   border-radius: 4px;
   color: #f0ffff;
+}
+.twoplayers_mode_button {
+  background-color:#2d60a7;
+}
+.library_button {
+  background-color: #421E3E;
 }
 .reset_yes {
   border: 4px solid #a73f2d;
@@ -291,7 +278,7 @@ input:checked + .slider:before {
 .reset_no {
   border: 4px solid #f0ffff;
 }
-/*END RESET BUTTONS*/
+/*END BUTTONS*/
 
 /*2P MODE*/
 #counter_1p, #counter_2p {
@@ -299,49 +286,46 @@ input:checked + .slider:before {
   justify-content: space-evenly;
   align-items: center;
 }
-
 #life_1p, #life_2p {
   font-size: 125pt !important;
   width: 70%;
   height: 250px;
 }
-
 #counter_1p { flex-direction: row;}
 #counter_2p { flex-direction: row-reverse;}
-
 #life_2p { /*reversed number*/
   -ms-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
   -webkit-transform: rotate(180deg);
   -o-transform: rotate(180deg);
 }
-
 #life_2p, .button_2p, #life_1p, .button_1p{
   font-size: 70pt;
 }
-
 #min_max_2p {
   display: flex;
   flex-direction: column-reverse;
   justify-content: center;
 }
-
 #space_1p, #space_2p {
   width: 24px;
 }
 /*END 2P MODE*/
 
 /*Footer Credits*/
-footer {
+#footer {
   font-weight: 200;
-  font-size: 10pt;
+  font-size: 11pt;
   text-align: center;
+  line-height: 5pt;
+  padding-bottom: 15px;
 }
 
-footer img {
+#footer img {
   width: 45px;
 }
 
-footer .contact {
+#footer .contact {
   color: inherit;
 }
+/*END Footer Credits*/

@@ -4,7 +4,7 @@
 	<!-- Informació Meta -->
 	<meta charset="utf-8"/>
 	<meta name="description" content="A personal MTG Counter">
-	<meta name="keywords" content="MTG, Magic, Magic the gathering, counter">
+	<meta name="keywords" content="MTG, Magic, Magic the gathering, counter, library, scryfall, card search">
 	<meta name="author" content="Roger Nebot">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 
@@ -13,24 +13,29 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;700&display=swap" rel="stylesheet">
 
-	<!-- CSS -->
-	<link rel="stylesheet" href="css/style.css" type="text/css"/>
+	<!-- CSS MTG FONT BY Alexandre Arpin-->
+	<link rel="stylesheet" href="mtg-font/css/magic-font.css" type="text/css"/>
 
-	<!--JQUERY
-	<script  type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
+	<!-- CSS -->
+	<link rel="stylesheet" href="css/counter.css" type="text/css"/>
+	<link rel="stylesheet" href="css/library.css" type="text/css"/>
+
+	<!--JQUERY-->
 	<script  type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
 
 	<!-- Javascript -->
-	<script  type="text/javascript" src="js/javascript.js"></script>
+	<script  type="text/javascript" src="js/counter.js"></script>
+	<script  type="text/javascript" src="js/library.js"></script>
 
 	<!-- favicon -->
 	<link href="img/favicon.png" rel="icon" type="image/png" />
 
 	<title>MTG Counter</title>
 </head>
-<body id="body" class="blue">
+<body>
 	<header></header>
-	<section>
+	<!--COUNTER APP-->
+	<section id="counter-app" class="blue">
 		<!-- Color selector -->
 		<div id="color_container" class="color_container_show">
 			<article id="color" class="color">
@@ -180,6 +185,7 @@
 		<div id="buttons">
 			<a onclick="counter_reset()" class="reset_all_counters_button">Reset all counters</a>
 			<a onclick="change_player_mode('1p')" id="change_player_mode" class="twoplayers_mode_button">2P Mode</a>
+			<a onclick="go_to_library()" id="library_mode" class="library_button">Open Library</a>
 		</div>
 		
 		<!--Fake Video for locking screen-->
@@ -188,6 +194,7 @@
 			Your browser does not support Screen Lock.
 		</video>
 	</article>
+	<!-- END COUNTER APP-->
 
 	<!--RESET CONFIRM-->
 	<article id="reset_confirm" class="invisible">
@@ -199,13 +206,60 @@
 			<a class="reset_button reset_yes" onclick="reset_yes()">Reset</a>
 		</div>
 	</article>
+	<!-- END RESET CONFIRM-->
+
+	<!--FOOTER-->
+	<article id="footer">
+		<p><a href="https://play.google.com/store/apps/details?id=com.alegria.cat.mtgcounter" target="blank_"><img src="img/android.png" alt="Get it in Google Play"></a>
+		<a href="https://github.com/rogerneb/Personal_MTG_Counter" target="blank_"><img src="img/github_logo.png" alt="get it on github"></a></p>
+		<p>Personal MTG Counter 4.0.0, GNU GPL | <a href="mailto:info@alegria.com" class="contact">Roger Nebot</a> | <span id="year">-</span></p>
+		<p>MTG Card Library powered with <a href="https://scryfall.com/" target="_blank" class="contact">Scryfall</a> - MTG font by <a href="https://github.com/AlexandreArpin/mtg-font" target="_blank" class="contact">AlexandreArpin</a></p>
+	</article>
+	<!--END FOOTER-->
 </section>
 
+<!-- CARD LIBRARY (invisble by default)-->
+<section id="library-app" class="invisible">
+	<!--search bar-->
+	<article id="search-bar">
+		<input type="text" id="card_search" value="" placeholder="Type a card name...">
+		<button onclick="search_card()" class="search-bar-button search-button">Search</button><br>
+		<button onclick="go_to_counter()" class="search-bar-button close-button">X</button><br>
+	</article>
+	<!--end search bar-->
 
-<footer>
-	<p><a href="https://play.google.com/store/apps/details?id=com.alegria.cat.mtgcounter" target="blank_"><img src="img/android.png" alt="Get it in Google Play"></a>
-	<a href="https://github.com/rogerneb/Personal_MTG_Counter" target="blank_"><img src="img/github_logo.png" alt="get it on github"></a></p>
-	<p>Personal MTG Counter 3.1.4, GNU GPL | <a href="mailto:info@alegria.com" class="contact">Roger Nebot</a> | <span id="year">-</span></p>
-</footer>
+	<!-- content -->
+	<article id="content">
+		<p id="error"></p>
+		<span id="card-img"></span>
+		<p id="card-name-cost"><b><span id="card-name"></span></b><span id="card-cost"></span></p>
+		<p id="card-type"></p>
+		<p id="card-text"></p>
+		<p id="card-power-toughness"></p>
+		<p id="card-price"></p>
+	</article>
+	<article id="card-legality">
+		<div>
+			<p id="card-legality-standard"></p>
+			<p id="card-legality-pioneer"></p>
+			<p id="card-legality-modern"></p>
+			<p id="card-legality-legacy"></p>
+			<p id="card-legality-vintage"></p>
+			<p id="card-legality-commander"></p>
+		</div>
+		<div>
+			<p id="card-legality-alchemy"></p>
+			<p id="card-legality-explorer"></p>
+			<p id="card-legality-brawl"></p>
+			<p id="card-legality-historic"></p>
+			<p id="card-legality-pauper"></p>
+			<p id="card-legality-penny"></p>
+			<p id="card-legality-modern"></p>
+		</div>
+	</article>
+	<article id="card-link"></article>
+	<!-- end content-->
+</section>
+<!-- END CARD LIBRARY-->
 </body>
 </html>
