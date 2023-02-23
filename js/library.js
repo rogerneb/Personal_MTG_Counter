@@ -114,7 +114,7 @@ function symbols_change(symbol){
   //split mana
   symbol = symbol.replace(/{W\/U}/g,  "<div class='mi-split'><i class='mi mi-w'></i><i class='mi mi-u'></i></div>") //white/blue
   symbol = symbol.replace(/{W\/B}/g,  "<div class='mi-split'><i class='mi mi-w'></i><i class='mi mi-b'></i></div>") //white/black
-  symbol = symbol.replace(/{U\/B}/g,  "<div class='mi-split'><i class='mi mi-u'></i><i class='mi mi-B'></i></div>") //Blue/Black
+  symbol = symbol.replace(/{U\/B}/g,  "<div class='mi-split'><i class='mi mi-u'></i><i class='mi mi-b'></i></div>") //Blue/Black
   symbol = symbol.replace(/{U\/R}/g,  "<div class='mi-split'><i class='mi mi-u'></i><i class='mi mi-r'></i></div>") //Blue/Red
   symbol = symbol.replace(/{B\/R}/g,  "<div class='mi-split'><i class='mi mi-b'></i><i class='mi mi-r'></i></div>") //black/Red
   symbol = symbol.replace(/{B\/G}/g,  "<div class='mi-split'><i class='mi mi-b'></i><i class='mi mi-g'></i></div>") //black/Red
