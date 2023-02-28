@@ -320,11 +320,9 @@ input:checked + .slider:before {
   line-height: 5pt;
   padding-bottom: 15px;
 }
-
 #footer img {
   width: 45px;
 }
-
 #footer .contact {
   color: inherit;
 }
