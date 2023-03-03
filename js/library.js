@@ -5,15 +5,30 @@ function search_card() {
     $.getJSON("https://api.scryfall.com/cards/named?fuzzy="+card_search, function(data) {
       console.clear()  
       console.log(data);
-
       //simplify data
-      var card_img = data["image_uris"]["png"]; //img
-      var card_name = data["name"]+" "; //name
-      //symbols change
-      var card_cost = symbols_change(data["mana_cost"]);
-      var card_type = data["type_line"] //type
-      var card_text = symbols_change(data["oracle_text"]); //text
-      var card_power_toughness = power_toughness_normalizer(data["power"], data["toughness"]); //power and toughness
+      //Simple-Faced cards
+      if (data["card_faces"] == null) {
+        var card_img = data["image_uris"]["png"]; //img
+        var card_cost = symbols_change(data["mana_cost"]); //card cost
+        var card_type = data["type_line"] //type
+        var card_name = data["name"]+" "; //name
+        var card_text = symbols_change(data["oracle_text"]); //text
+        var card_power_toughness = power_toughness_normalizer(data["power"], data["toughness"]); //power and toughness
+      }
+      //Double-Faced cards (this is a fucking mess)
+      else{
+        var card_img = data["card_faces"]["0"]["image_uris"]["png"]; //img
+        var card_img_2 = data["card_faces"]["1"]["image_uris"]["png"]; //img2
+        var card_cost = symbols_change(data["card_faces"]["0"]["mana_cost"]); //card cost
+        var card_text_side_1 ="<p><b>"+data["card_faces"]["0"]["name"]+"</b> "+card_cost+"</p>"+symbols_change(data["card_faces"]["0"]["oracle_text"])+"<p>"+power_toughness_normalizer(data["card_faces"]["0"]["power"], data["card_faces"]["0"]["toughness"])+"</p><hr>"
+        var card_text_side_2 ="<p><b>"+data["card_faces"]["1"]["name"]+"</b></p>"+symbols_change(data["card_faces"]["1"]["oracle_text"])+"<p>"+power_toughness_normalizer(data["card_faces"]["1"]["power"], data["card_faces"]["1"]["toughness"])+"</p>"
+        var card_text = card_text_side_1+card_text_side_2;
+        var card_cost = ""; //clean the cost...
+        
+      }
+
+
+      
       var card_price = price_normalizer(data["prices"]["eur"], data["prices"]["usd"]); //price
       var card_link = data["scryfall_uri"]; //scryfall URL
       //legalities
@@ -29,9 +44,18 @@ function search_card() {
       var card_legality_historic = get_legality(data["legalities"]["historic"]);
       var card_legality_pauper = get_legality(data["legalities"]["pauper"]);
       var card_legality_penny = get_legality(data["legalities"]["penny"]);
+      
       //write data in the html
       $("#error").html(""); //delete error
-      $('#card-img').html("<img src="+card_img+">"); //img
+      //image for Simple-Faced cards
+      if (data["card_faces"] == null) {
+        $('#card-img').html("<img src="+card_img+">"); //img
+      }
+      //image for double-faced cards
+      else {
+        $('#card-img').html("<img src="+card_img+" onclick=change_card_side(1,'"+card_img+"','"+card_img_2+"')> <p class='flip-text'>Click on the image to flip it.</p>"); //img
+      }
+
       $("#card-name").html(card_name); //name
       $("#card-cost").html(card_cost); //cost
       $("#card-type").html(card_type); //type
@@ -184,3 +208,13 @@ function get_legality(legal){
   }
 }
 //END GET LEGALITIES
+
+//CHANGE SIDE OF THE CARD
+function change_card_side(actual_side,card_img,card_img_2){
+  if (actual_side==1){ //front to back
+    $('#card-img').html("<img src="+card_img_2+" onclick=change_card_side(2,'"+card_img+"','"+card_img_2+"')> <p class='flip-text'>Click on the image to flip it.</p>");
+  }else{ //back to front
+    $('#card-img').html("<img src="+card_img+" onclick=change_card_side(1,'"+card_img+"','"+card_img_2+"')> <p class='flip-text'>Click on the image to flip it.</p>");
+  }
+}
+//END CHANGE SIDE OF THE CARD

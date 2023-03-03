@@ -101,3 +101,9 @@ img {
   width: 50px;
   opacity: 0.8
 }
+
+.flip-text {
+  text-align: center;
+  margin: 0;
+  font-style: italic;
+}
