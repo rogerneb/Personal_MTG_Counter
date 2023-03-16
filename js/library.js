@@ -3,11 +3,12 @@ function search_card() {
   var card_search = $('#card_search').val();
   if (card_search != "") { //when something is written...
     $.getJSON("https://api.scryfall.com/cards/named?fuzzy="+card_search, function(data) {
-      console.clear()  
+      console.clear()
       console.log(data);
+      var card_sides = get_card_sides(data); //get witch kind of card. Returns: 0=1card 1 side (normal card) | 1=2 cards 1 side | 2=2 cards 2 sides.
+
       //simplify data
-      //Simple-Faced cards
-      if (data["card_faces"] == null) {
+      if (card_sides == 0) { //normal card
         var card_img = data["image_uris"]["png"]; //img
         var card_cost = symbols_change(data["mana_cost"]); //card cost
         var card_type = data["type_line"] //type
@@ -15,22 +16,29 @@ function search_card() {
         var card_text = symbols_change(data["oracle_text"]); //text
         var card_power_toughness = power_toughness_normalizer(data["power"], data["toughness"]); //power and toughness
       }
-      //Double-Faced cards (this is a fucking mess)
-      else{
-        var card_img = data["card_faces"]["0"]["image_uris"]["png"]; //img
-        var card_img_2 = data["card_faces"]["1"]["image_uris"]["png"]; //img2
-        var card_cost = symbols_change(data["card_faces"]["0"]["mana_cost"]); //card cost
-        var card_text_side_1 ="<p><b>"+data["card_faces"]["0"]["name"]+"</b> "+card_cost+"</p>"+symbols_change(data["card_faces"]["0"]["oracle_text"])+"<p>"+power_toughness_normalizer(data["card_faces"]["0"]["power"], data["card_faces"]["0"]["toughness"])+"</p><hr>"
-        var card_text_side_2 ="<p><b>"+data["card_faces"]["1"]["name"]+"</b></p>"+symbols_change(data["card_faces"]["1"]["oracle_text"])+"<p>"+power_toughness_normalizer(data["card_faces"]["1"]["power"], data["card_faces"]["1"]["toughness"])+"</p>"
+      else { //2 cards in one
+        if (card_sides == 1) { //2 cards 1 side
+          var card_img = data["image_uris"]["png"]; //img
+        }
+        else if (card_sides == 2) { //2 cards 2 side
+          var card_img = data["card_faces"]["0"]["image_uris"]["png"]; //img
+          var card_img_2 = data["card_faces"]["1"]["image_uris"]["png"]; //img2
+        }
+        var card_cost1 = symbols_change(data["card_faces"]["0"]["mana_cost"]); //card cost
+        var card_cost2 = symbols_change(data["card_faces"]["1"]["mana_cost"]); //card cost
+        var card_type1 = data["card_faces"]["0"]["type_line"] //type
+        var card_type2 = data["card_faces"]["1"]["type_line"] //type
+        var card_text_side_1 ="<span><b>"+data["card_faces"]["0"]["name"]+"</b> "+card_cost1+ "</span>"+"<p>"+card_type1+"</p>"+symbols_change(data["card_faces"]["0"]["oracle_text"])+"<p>"+power_toughness_normalizer(data["card_faces"]["0"]["power"], data["card_faces"]["0"]["toughness"])+"</p><hr>"
+        var card_text_side_2 ="<span><b>"+data["card_faces"]["1"]["name"]+"</b> "+card_cost2+"<span>"+"<p>"+card_type2+"</p>"+symbols_change(data["card_faces"]["1"]["oracle_text"])+"<p>"+power_toughness_normalizer(data["card_faces"]["1"]["power"], data["card_faces"]["1"]["toughness"])+"</p>"
         var card_text = card_text_side_1+card_text_side_2;
         var card_cost = ""; //clean the cost...
-        
+        var card_type = "" //clean the type
+        var card_name = ""; //clean the name
       }
-
-
       
       var card_price = price_normalizer(data["prices"]["eur"], data["prices"]["usd"]); //price
       var card_link = data["scryfall_uri"]; //scryfall URL
+      
       //legalities
       var card_legality_standard = get_legality(data["legalities"]["standard"]);
       var card_legality_pioneer = get_legality(data["legalities"]["pioneer"]);
@@ -48,11 +56,11 @@ function search_card() {
       //write data in the html
       $("#error").html(""); //delete error
       //image for Simple-Faced cards
-      if (data["card_faces"] == null) {
+      if (card_sides == 0 || card_sides == 1) {
         $('#card-img').html("<img src="+card_img+">"); //img
       }
       //image for double-faced cards
-      else {
+      else if (card_sides == 2){
         $('#card-img').html("<img src="+card_img+" onclick=change_card_side(1,'"+card_img+"','"+card_img_2+"')> <p class='flip-text'>Click on the image to flip it.</p>"); //img
       }
 
@@ -110,7 +118,15 @@ function search_card() {
       document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     })
   }  
-}    
+}
+
+//GET NUM OF CARD SIDES
+function get_card_sides(data) { //get witch kind of card. Returns: 0=1card 1 side (normal card) | 1=2 cards 1 side | 2=2 cards 2 sides.
+  if (data["card_faces"] == null) {return 0;} //1card 1 side (normal card)
+  else if (data["card_faces"]["0"]["image_uris"] == null){return 1;} //1=2 cards 1 side
+  else{return 2;} //2= 2 cards 2 sides.
+}
+//END GET TYPE CARD
   
 //SYMBOLS
 function symbols_change(symbol){
