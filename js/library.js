@@ -58,12 +58,14 @@ function search_card() {
       //image for Simple-Faced cards
       if (card_sides == 0 || card_sides == 1) {
         $('#card-img').html("<img src="+card_img+">"); //img
+        //<a href="+card_img+" download="+card_img+">download</a>
       }
       //image for double-faced cards
       else if (card_sides == 2){
         $('#card-img').html("<img src="+card_img+" onclick=change_card_side(1,'"+card_img+"','"+card_img_2+"')> <p class='flip-text'>Click on the image to flip it.</p>"); //img
       }
 
+      $('#card-download').html("<a href="+card_img+" download="+card_img+"><img src='img/download_button.png'></a>"); //card link to download
       $("#card-name").html(card_name); //name
       $("#card-cost").html(card_cost); //cost
       $("#card-type").html(card_type); //type
@@ -93,6 +95,7 @@ function search_card() {
       $("#error").html("<img src='img/sad.png' alt='sad face'><br><span id='error-ooops'><b>Oops!</b></span><br>It looks like we can't find the card you're looking for. It may not exist. Check that you typed it correctly and try again."); //error
       //cleaning previous card info
       $('#card-img').html(""); //img
+      $('#card-download').html("") //download card image
       $("#card-name").html(""); //name
       $("#card-cost").html(""); //cost
       $("#card-type").html(""); //type
@@ -229,8 +232,10 @@ function get_legality(legal){
 function change_card_side(actual_side,card_img,card_img_2){
   if (actual_side==1){ //front to back
     $('#card-img').html("<img src="+card_img_2+" onclick=change_card_side(2,'"+card_img+"','"+card_img_2+"')> <p class='flip-text'>Click on the image to flip it.</p>");
+    $('#card-download').html("<a href="+card_img_2+" download="+card_img_2+"><img src='img/download_button.png'></a>"); //card link to download
   }else{ //back to front
     $('#card-img').html("<img src="+card_img+" onclick=change_card_side(1,'"+card_img+"','"+card_img_2+"')> <p class='flip-text'>Click on the image to flip it.</p>");
+    $('#card-download').html("<a href="+card_img+" download="+card_img+"><img src='img/download_button.png'></a>"); //card link to download
   }
 }
 //END CHANGE SIDE OF THE CARD

@@ -51,6 +51,15 @@ img {
   width: 100%;
 }
 
+/*Download button*/
+#card-download {
+  text-align: center;
+  margin: 0;
+}
+#card-download img {
+  width: 35px;
+}
+
 /*Scryfall button link*/
 #card-link {
   text-align: center;
