@@ -104,6 +104,11 @@ function reset_yes(){ //when reset...
     }
   }
 
+  //reset commander counters
+  for (n=1; n<=6; n++){
+    $("#commander_life_"+n+"p").text("40");
+  }
+
   //back to top
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
@@ -145,22 +150,45 @@ function restore_dice(n) { //restore the image of dice
   $("#d"+n).fadeIn(fadetime) //Fade In
 }
 
-//change mode 1p to 2p or 2p to 1p
-function change_player_mode(actual_mode){
-  if(actual_mode == "1p") {
-    $('#oneplayers_container').addClass("invisible"); //hide one player mode
-    $('#twoplayers_container').removeClass(); //show to players mode
-    $('#change_player_mode').attr("onclick", "change_player_mode('2p')"); //change the actual mode in button
-    $('#change_player_mode').html("1P Mode");
-  }else if (actual_mode == "2p") {
-    $('#twoplayers_container').addClass("invisible"); //hide two players mode
-    $('#oneplayers_container').removeClass(); //show one player mode
-    $('#change_player_mode').attr("onclick", "change_player_mode('1p')"); //change the actual mode in button
-    $('#change_player_mode').html("2P Mode");
-  }
+//change mode 1p 2p or 6p
+function mode_1p(){
+  $('#twoplayers_container').addClass("invisible"); //hide two players mode
+  $('#oneplayers_container').removeClass(); //show one player mode
+  $('#oc').removeClass(); //show other counters
+  $('#commander-container').addClass("invisible"); //hide commander
+  $('#1p_mode').removeClass("not_selected"); //select 1pmode
+  $('#2p_mode').addClass("not_selected"); //unselect 2pmode
+  $('#6p_mode').addClass("not_selected"); //unselect 2pmode
   //go to top
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
+function mode_2p(){
+  $('#oneplayers_container').addClass("invisible"); //hide one player mode
+  $('#twoplayers_container').removeClass(); //show to players mode
+  $('#oc').removeClass(); //show other counters
+  $('#commander-container').addClass("invisible"); //hide commander
+  $('#1p_mode').addClass("not_selected"); //select 1pmode
+  $('#2p_mode').removeClass("not_selected"); //unselect 2pmode
+  $('#6p_mode').addClass("not_selected"); //unselect 2pmode
+  //go to top
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
+function mode_6p(){
+  $('#oneplayers_container').addClass("invisible"); //hide one player mode
+  $('#twoplayers_container').addClass("invisible"); //hide two player mode
+  $('#oc').addClass("invisible"); //hide other counters
+  $('#commander-container').removeClass(); //show commander
+  $('#1p_mode').addClass("not_selected"); //select 1pmode
+  $('#2p_mode').addClass("not_selected"); //unselect 2pmode
+  $('#6p_mode').removeClass("not_selected"); //unselect 2pmode
+  //go to top
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+ 
 }
 
 //go to library

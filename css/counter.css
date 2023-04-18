@@ -22,7 +22,7 @@ hr {
 }
 
 /*Class used to show and hide elements*/
-.invisible {display: none;}
+.invisible {display: none !important;}
 
 /*Color selector*/
 #color_container {
@@ -249,7 +249,7 @@ input:checked + .slider:before {
 #reset_message p {
   font-weight: 100;
 }
-.reset_all_counters_button, .twoplayers_mode_button, .library_button {
+.reset_all_counters_button, .library_button {
 	background-color:#a73f2d;
   border: 4px solid #f0ffff;
   border-radius: 4px;
@@ -265,9 +265,6 @@ input:checked + .slider:before {
   border-radius: 4px;
   color: #f0ffff;
 }
-.twoplayers_mode_button {
-  background-color:#2d60a7;
-}
 .library_button {
   background-color: #421E3E;
 }
@@ -278,6 +275,20 @@ input:checked + .slider:before {
 .reset_no {
   border: 4px solid #f0ffff;
 }
+
+#players_select {
+  display: flex;
+  justify-content: space-between;
+}
+.player_mode {
+  padding: 3px 15px;
+  font-size: 1.2em;
+  border-radius: 4px;
+  border: 4px solid #f0ffff;
+  color: #f0ffff;
+  background: #2d60a7;
+}
+.not_selected { opacity: .4;}
 /*END BUTTONS*/
 
 /*2P MODE*/
@@ -327,3 +338,30 @@ input:checked + .slider:before {
   color: inherit;
 }
 /*END Footer Credits*/
+
+
+/*COMMANDER MODE STYLES*/
+#commander-container .button {
+  font-size: 50pt !important;
+  line-height: 70px;
+}
+.commander_life {
+  align-self: center;
+  width: 100%
+}
+.group {
+  display: flex;
+  font-size: 60pt;
+  margin-bottom: 70px;
+}
+
+.left, .right {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+}
+.left  {rotate: 90deg;}
+.right {rotate: 270deg;}
+
+.player-name {font-size: 11pt;}
+/*END COMMANDER MODE*/
