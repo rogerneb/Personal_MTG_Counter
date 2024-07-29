@@ -71,7 +71,7 @@
 		</div>
 
 		<!--life counter-->
-		<div id="oneplayers_container" class="">
+		<div id="oneplayers_container" class="invisible">
 			<article id="counter">
 				<!--plus button -->
 				<div id="max" class="button" onclick="counter_change('+', 'life')">+</div>
@@ -84,7 +84,7 @@
 		</div>
 
 		<!--life 2P counter-->
-		<div id="twoplayers_container" class="invisible">
+		<div id="twoplayers_container" class="">
 			<article id="counter_2p">
 				<!-- LIFE 2P-->
 				<div id="space_2p"></div>
@@ -262,8 +262,8 @@
 			<a onclick="commander_mode()" id="commander_mode" class="commander_mode_button">Commander Mode</a>-->
 			<a onclick="go_to_library()" id="library_mode" class="library_button">Card Library</a>
 			<div id="players_select">
-				<a onclick="mode_1p()" id="1p_mode" class="player_mode">1P Mode</a>
-				<a onclick="mode_2p()" id="2p_mode" class="player_mode not_selected">2P Mode</a>
+				<a onclick="mode_1p()" id="1p_mode" class="player_mode not_selected">1P Mode</a>
+				<a onclick="mode_2p()" id="2p_mode" class="player_mode">2P Mode</a>
 				<a onclick="mode_6p()" id="6p_mode" class="player_mode not_selected">6P Mode</a>
 			</div>
 		</div>
@@ -292,7 +292,7 @@
 	<article id="footer">
 		<p><a href="https://play.google.com/store/apps/details?id=com.alegria.cat.mtgcounter" target="blank_"><img src="img/android.png" alt="Get it in Google Play"></a>
 		<a href="https://github.com/rogerneb/Personal_MTG_Counter" target="blank_"><img src="img/github_logo.png" alt="get it on github"></a></p>
-		<p>Personal MTG Counter 5.0.0, GNU GPL | <a href="mailto:info@alegria.com" class="contact">Roger Nebot</a> | <span id="year">-</span></p>
+		<p>Personal MTG Counter 5.1.0, GNU GPL | <a href="mailto:info@alegria.com" class="contact">Roger Nebot</a> | <span id="year">-</span></p>
 		<p>MTG Card Library powered with <a href="https://scryfall.com/" target="_blank" class="contact">Scryfall</a> - MTG font by <a href="https://github.com/AlexandreArpin/mtg-font" target="_blank" class="contact">AlexandreArpin</a></p>
 	</article>
 	<!--END FOOTER-->
